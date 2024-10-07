@@ -25,8 +25,6 @@ def bake_time_remaining(elapsed_bake_time: int):
     return EXPECTED_BAKE_TIME - elapsed_bake_time
 
 
-# TODO: Define the 'preparation_time_in_minutes()' function below.
-# You might also consider using 'PREPARATION_TIME' here, if you have it defined.
 def preparation_time_in_minutes(number_of_layers: int):
     """Calculate the preparation time in minutes.
 
@@ -39,8 +37,6 @@ def preparation_time_in_minutes(number_of_layers: int):
     return number_of_layers * PREPARATION_TIME
 
 
-# TODO: define the 'elapsed_time_in_minutes()' function below.
-# Remember to add a docstring (you can copy and then alter the one from bake_time_remaining.)
 def elapsed_time_in_minutes(number_of_layers: int, elapsed_bake_time: int):
     """Calculate the total elapsed time in minutes.
 
