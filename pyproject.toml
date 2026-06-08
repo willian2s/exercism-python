@@ -6,6 +6,7 @@ authors = ["Willian"]
 
 [tool.poetry.dependencies]
 python = "^3.14"
+pytest = "^9.0.3"
 
 [build-system]
 requires = ["poetry-core>=1.9.0"]

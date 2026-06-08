@@ -3,7 +3,7 @@ PYTHON ?= python3
 VENV_DIR ?= .venv
 VENV_PYTHON := $(VENV_DIR)/bin/python
 EX ?=
-
+EXERCISM ?= exercism
 .PHONY: help bootstrap test test-all shell
 
 help:
@@ -43,4 +43,11 @@ shell:
 		printf '%s\n' 'eval $$(poetry env activate)'; \
 	else \
 		printf "source $(VENV_DIR)/bin/activate\n"; \
+	fi
+
+submit:
+	@if command -v $(EXERCISM) >/dev/null 2>&1; then \
+		$(EXERCISM) submit $(EX); \
+	else \
+		printf '%s\n' 'Exercism CLI not found. Install it from: https://exercism.org/cli'; \
 	fi
