@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "exercism-python"
+version = "0.1.0"
+description = "Workspace for Exercism Python exercises"
+authors = ["Willian"]
+
+[tool.poetry.dependencies]
+python = "^3.14"
+
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"
