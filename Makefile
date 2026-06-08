@@ -11,7 +11,7 @@ help:
 	@printf "  make bootstrap   Use Poetry when available, otherwise create .venv\n"
 	@printf "  make test        Run tests from the repo root\n"
 	@printf "  make test EX=... Run tests for a specific exercise folder\n"
-	@printf "  make shell       Show the preferred shell command\n"
+	@printf "  make shell       Show the preferred activation command\n"
 
 bootstrap:
 	@if command -v $(POETRY) >/dev/null 2>&1; then \
@@ -40,7 +40,7 @@ test-all:
 
 shell:
 	@if command -v $(POETRY) >/dev/null 2>&1; then \
-		printf "poetry shell\n"; \
+		printf '%s\n' 'eval $$(poetry env activate)'; \
 	else \
 		printf "source $(VENV_DIR)/bin/activate\n"; \
 	fi

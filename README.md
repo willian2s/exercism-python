@@ -10,10 +10,22 @@ Este repositório guarda os exercícios do track Python do Exercism.
 make bootstrap
 ```
 
-2. Se o Poetry estiver instalado, ele será usado automaticamente. Caso contrário, o Makefile cria e usa `.venv` local.
+2. Ative o ambiente. Rode `make shell` para ver o comando correto para o seu setup:
 
 ```bash
-poetry shell
+make shell
+```
+
+Sem Poetry instalado, use:
+
+```bash
+source .venv/bin/activate
+```
+
+Com Poetry instalado, use:
+
+```bash
+eval $(poetry env activate)
 ```
 
 ## Testes
