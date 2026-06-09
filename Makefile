@@ -46,8 +46,10 @@ shell:
 	fi
 
 submit:
-	@if command -v $(EXERCISM) >/dev/null 2>&1; then \
-		$(EXERCISM) submit $(EX); \
+	@if command -v $(POETRY) >/dev/null 2>&1; then \
+		$(POETRY) run python submit.py $(EX); \
+	elif [ -x "$(VENV_PYTHON)" ]; then \
+		$(VENV_PYTHON) submit.py $(EX); \
 	else \
-		printf '%s\n' 'Exercism CLI not found. Install it from: https://exercism.org/cli'; \
+		$(PYTHON) submit.py $(EX); \
 	fi
