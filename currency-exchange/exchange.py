@@ -5,8 +5,6 @@ Python numbers documentation: https://docs.python.org/3/library/stdtypes.html#nu
 Overview of exchanging currency when travelling: https://www.compareremit.com/money-transfer-tips/guide-to-exchanging-currency-for-overseas-travel/
 """
 
-
-
 def exchange_money(budget, exchange_rate):
     """Calculate estimated value after exchange.
 
@@ -28,7 +26,7 @@ def exchange_money(budget, exchange_rate):
 
     """
 
-    pass
+    return budget / exchange_rate
 
 
 def get_change(budget, exchanging_value):
@@ -53,7 +51,7 @@ def get_change(budget, exchanging_value):
 
     """
 
-    pass
+    return budget - exchanging_value
 
 
 def get_value_of_bills(denomination, number_of_bills):
@@ -77,7 +75,7 @@ def get_value_of_bills(denomination, number_of_bills):
 
     """
 
-    pass
+    return number_of_bills * denomination
 
 
 def get_number_of_bills(amount, denomination):
@@ -102,7 +100,7 @@ def get_number_of_bills(amount, denomination):
 
     """
 
-    pass
+    return amount // denomination
 
 
 def get_leftover_of_bills(amount, denomination):
@@ -127,7 +125,7 @@ def get_leftover_of_bills(amount, denomination):
 
     """
 
-    pass
+    return amount % denomination
 
 
 def exchangeable_value(budget, exchange_rate, spread, denomination):
@@ -156,4 +154,7 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
     determining the exchange rate plus the spread.
     """
 
-    pass
+    rate_with_spread = exchange_rate * (1 + spread / 100)
+    value_in_foreign = budget / rate_with_spread
+    number_of_bills = value_in_foreign // denomination
+    return int(number_of_bills * denomination)
